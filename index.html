@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ModalJS - Componente reutilizable</title>
+
+  <link rel="stylesheet" href="css/componente.css">
+
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f6f8;
+      margin: 0;
+      padding: 40px 20px;
+      color: #222;
+    }
+
+    .contenedor {
+      max-width: 720px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .botones {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .demo-btn {
+      border: none;
+      padding: 12px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      background: #111827;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <main class="contenedor">
+    <h1>ModalJS</h1>
+
+    <p>
+      ModalJS es un componente visual reutilizable que permite mostrar
+      ventanas emergentes con distinto título, mensaje y tipo.
+    </p>
+
+    <div class="botones">
+      <button class="demo-btn" id="btnInfo">Abrir modal informativo</button>
+      <button class="demo-btn" id="btnExito">Abrir modal de éxito</button>
+      <button class="demo-btn" id="btnConfirmar">Abrir confirmación</button>
+    </div>
+  </main>
+
+  <script src="js/componente.js"></script>
+
+  <script>
+    document.getElementById("btnInfo").addEventListener("click", () => {
+      mostrarModal({
+        titulo: "Información",
+        mensaje: "Este mismo componente puede reutilizarse con contenido diferente.",
+        botonTexto: "Entendido",
+        tipo: "info"
+      });
+    });
+
+    document.getElementById("btnExito").addEventListener("click", () => {
+      mostrarModal({
+        titulo: "Registro completado",
+        mensaje: "Tus datos fueron guardados correctamente.",
+        botonTexto: "Continuar",
+        tipo: "exito",
+        onAceptar: () => {
+          console.log("El usuario aceptó el modal de éxito.");
+        }
+      });
+    });
+
+    document.getElementById("btnConfirmar").addEventListener("click", () => {
+      mostrarModal({
+        titulo: "Confirmar acción",
+        mensaje: "¿Deseas continuar con esta operación?",
+        botonTexto: "Sí, continuar",
+        tipo: "error",
+        mostrarCancelar: true,
+        textoCancelar: "No, cancelar",
+        onAceptar: () => {
+          console.log("Acción confirmada.");
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
