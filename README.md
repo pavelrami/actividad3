@@ -158,44 +158,8 @@ El componente es el mismo, pero cambia el contenido.
 
 ---
 
-## Capturas de pantalla
 
 
-```md
-![Modal informativo](img/modal-info.png)
-![Modal de éxito](img/modal-exito.png)
-```
-
----
-
-## Consola
-
-```js
-onAceptar: () => {
-  console.log("El usuario aceptó.");
-}
-```
-
-Puedes tomar una captura de la consola mostrando ese mensaje.
-
----
-
-
-
-## GitHub Pages
-
-1. Entra al repositorio.
-2. Ve a **Settings**.
-3. Selecciona **Pages**.
-4. En **Build and deployment** selecciona **Deploy from a branch**.
-5. Selecciona la rama `main`.
-6. Selecciona `/ (root)`.
-7. Guarda.
-
-Después agrega aquí:
-
-**Repositorio:** PENDIENTE  
-**GitHub Pages:** PENDIENTE
 
 ---
 
